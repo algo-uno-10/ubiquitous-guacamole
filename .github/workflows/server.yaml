@@ -3,7 +3,7 @@ name: ENC-RUNNER
 'on':
   push:
     branches:
-      - server
+      - main
 
 jobs:
   download:
