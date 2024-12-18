@@ -58,6 +58,7 @@ jobs:
       - name: Encode segment
         run: |
           cd /app
+          
           python3 encode.py ${{ matrix.segment }}
 
   upload:
@@ -75,4 +76,5 @@ jobs:
       - name: Run upload script
         run: |
           cd /app
+          
           python3 upload.py
