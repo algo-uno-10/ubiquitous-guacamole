@@ -46,7 +46,13 @@ jobs:
         run: |
           apt-get update
           apt-get install -y jq
-      - name: Restore shared cache
+      - name: Restore download cache (for required files)
+        id: restore-download-cache
+        uses: actions/cache@v3
+        with:
+          path: /app
+          key: ${{ github.sha }}-download
+      - name: Restore shared cache (for encoded files)
         id: restore-shared-cache
         uses: actions/cache@v3
         with:
@@ -56,7 +62,7 @@ jobs:
         run: |
           cd /app
           python3 encode.py ${{ matrix.segment }}
-      - name: Save to shared cache
+      - name: Save encoded files to shared cache
         id: save-shared-cache
         uses: actions/cache@v3
         with:
@@ -69,11 +75,7 @@ jobs:
     container:
       image: docker.io/amandaa00/git-atc:test-para
     steps:
-      - name: Install jq
-        run: |
-          apt-get update
-          apt-get install -y jq
-      - name: Restore shared cache
+      - name: Restore shared cache (for encoded files)
         uses: actions/cache@v3
         with:
           path: /app
