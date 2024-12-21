@@ -79,16 +79,19 @@ jobs:
         with:
           pattern: segment-*
           path: /app/encoded
+          
       - name: Extract necessary files and clean up
         run: |
           cd /app/encoded
-          ls -sh
+          
           for dir in segment-*; do
             if [ -d "$dir" ]; then
               mv "$dir"/* .
               rmdir "$dir"
             fi
           done
+
+          ls -sh
       - name: Merge and upload files
         run: |
           cd /app
