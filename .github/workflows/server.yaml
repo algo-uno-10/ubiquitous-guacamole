@@ -80,22 +80,63 @@ jobs:
           key: ${{ github.sha }}-download
       - name: Setup directories
         run: |
+          echo "Creating necessary directories..."
           mkdir -p /tmp/encoded_segments
           mkdir -p /app/encoded
+          echo "Directories created:"
+          ls -la /tmp/encoded_segments
+          ls -la /app/encoded
       - name: Restore each segment and move files
         run: |
+          echo "Starting to process segments..."
+          echo "Available segments: $(echo '${{ needs.download.outputs.segments }}' | jq -r '.[]')"
+          
           for segment in $(echo '${{ needs.download.outputs.segments }}' | jq -r '.[]'); do
-            # Restore each segment cache to a temp directory
-            mkdir -p "/tmp/encoded_segments/$segment"
-            SEGMENT_KEY="${{ github.sha }}-segment-$segment"
+            echo "Processing segment: $segment"
             
-            # Use actions/cache/restore directly in script
+            # Create temp directory for this segment
+            echo "Creating temp directory for segment $segment"
+            mkdir -p "/tmp/encoded_segments/$segment"
+            
+            # Generate cache key
+            SEGMENT_KEY="${{ github.sha }}-segment-$segment"
+            echo "Cache key for segment: $SEGMENT_KEY"
+            
+            # Restore cache
+            echo "Restoring cache for segment $segment..."
             gh cache restore "$SEGMENT_KEY" --path "/tmp/encoded_segments/$segment"
             
-            # Move files to /app/encoded
-            cp -r /tmp/encoded_segments/$segment/* /app/encoded/
+            echo "Contents of temp directory for segment $segment:"
+            ls -la "/tmp/encoded_segments/$segment"
+            
+            # Copy files
+            echo "Copying files to /app/encoded..."
+            cp -rv /tmp/encoded_segments/$segment/* /app/encoded/
+            
+            echo "Current contents of /app/encoded:"
+            ls -la /app/encoded
+            
+            echo "Finished processing segment: $segment"
+            echo "----------------------------------------"
           done
+          
+          echo "All segments processed. Final contents of /app/encoded:"
+          ls -la /app/encoded
+          
+          echo "File sizes in /app/encoded:"
+          du -sh /app/encoded/*
+          
+          echo "Total size of /app/encoded:"
+          du -sh /app/encoded
       - name: Merge and upload files
         run: |
+          echo "Starting merge and upload process..."
           cd /app
+          echo "Current working directory: $(pwd)"
+          echo "Contents of current directory:"
+          ls -la
+          echo "Contents of encoded directory:"
+          ls -la encoded/
+          echo "Running upload script..."
           python3 upload.py
+          echo "Upload complete!"
