@@ -58,7 +58,7 @@ jobs:
           mkdir -p encoded
           python3 encode.py ${{ matrix.segment }}
       - name: Save encoded segment
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: segment-${{ matrix.segment }}
           path: /app/encoded
@@ -70,11 +70,16 @@ jobs:
       image: docker.io/amandaa00/git-atc:test-para
     steps:
       - name: Download all encoded segments
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: segment-*
+          pattern: segment-*
           path: /app/encoded
       - name: Merge and upload files
         run: |
           cd /app
           python3 upload.py
+      - name: Delete artifacts
+        run: |
+          for artifact in $(echo ${{ needs.download.outputs.segments }} | jq -r '.[]'); do
+            gh api -X DELETE /repos/${{ github.repository }}/actions/artifacts/segment-$artifact
+          done
