@@ -124,7 +124,7 @@ jobs:
           ls -la /app/encoded
           
           echo "File sizes in /app/encoded:"
-          du -sh /app/encoded/*
+          ls -sh /app/encoded
           
           echo "Total size of /app/encoded:"
           du -sh /app/encoded
