@@ -26,7 +26,7 @@ jobs:
       - name: Run download script
         run: |
           cd /app
-          python3 download.py ZnVjawZXlKUFYwNUZVaUk2SWt0cGJtYzVPRGd4SWl3aVVrVlFUeUk2SW5WeVltRnVMVzlqZEc4dGMzVmpZMjkwWVhOb0lpd2lWRWRmUVZCSlgwbEVJam9pTVRZMU5EWXlOekFpTENKVVIxOUJVRWxmU0VGVFNDSTZJakZsTVdWbU1XSmlZalpsT0dNMlltTTVNREF5TURkallUVmhNVEZqWmpaaUlpd2lWRWRmUWs5VVgxUlBTMFZPSWpvaU5USTRNamszTkRjMk5UcEJRVWRJVG1wQ1EzRlNlWFo0WjFWVE9XOTVORWhVUjBOME5VSkRhbk5rTFVwaWN5SXNJa1pKVEVVaU9qZzRPQ3dpUmtsTVJWOU9RVTFGSWpvaVd5QkNURU1nWFNBZ1V6TkZPU0JaWld4c2IzZHpkRzl1WlM1dGEzWWlMQ0pKUkNJNklsbGxiRjh6WWpjOU55SXNJa05OUkNJNklscHRXblJqUjFadVNVTXhjRWxJZEhCaWJEbHRZVmQ0YkdaVFFYUmFiV3h6WkVkV2VWZ3lUblppV0VKeldsaG5aMGx0VW5sWldHUXdXbGhvTUZCWFduWmlibEp0WVZkNGJGQlhaM1ZrU0ZKdFQyNVNiR1ZJVVRsS2VVSlZVbmxCZEVsRlFtbGlTRlpzV1RKR2NscFdPWFZhV0ZJellqTktja2xEWXpaYWJUbDFaRWRPZG1KSE9YbFFXR1J2WVZoU2JFOXRXblppYmxKNllWaHdiRkJVU1RCUGJtYzVUVlJCTm1WVU1IaE5RMGxuVEZjeGFHTkRRWGRKUXpGMFdsaFNhRnBIUmpCWlZIQjZUMjFGWjJSSGJEQmlSMVU1U1d4U1NFOXBRa0ZaYlhneFdsZE9hR0V5Vm1aaWJWWXdaREk1ZVdGNVNXZE1WekZzWkVkR2ExbFlVbWhQYmswMlkzbENNR0ZZVW5OYVZEQnBWa1ZqTmtsRlFtbGlTRlpzV1RKR2NscFdPWFZhV0ZJellqTktja2xEU1dkTVZ6RnNaRWRHYTFsWVVtaEpTRkp3WkVkNGJGQlRTbFZTZW05blVVZEtjMlJYVm1wWlYzUnNXREkxYkdSSVpIWmpiWE5wU1VNeGFrOXVXV2RpUjJ4cFl6TmFNRmxZV1hoSlF6RjNZMjFXZWxwWVVXZE9hVUYwV25sQmVVNUVRV2RNV0UxblRWUkpORTFJWnpOTmFrRm5URmhDY0dWR09XMWlXRkZuWlZoV01rNUVTWGRqUTBGMFl6TmFNRmxZV1hoTVdFSm9ZMjFHZEdONVFqQmtWelZzVUZSRk5scHRiSE5pVXpGdVkyMUdjR0pxTUhkSlF6RnFZMjFaWjA1RVkyZE1WM2gyV2pKNGJHUnRWbk5KUjFaNVkyMDVlVWxETVdwUGJVVm5Za2RzYVdJelFqRmplVUYwV1ZkTlowMXBRWFJaVjBsblRrUkNja2xETVdwUGJrMW5XVEk1ZDJWVFFqZGlNMEptV20xc2MxcFlNR2RNV0dzOUluMD0=
+          python3 download.py ZnVjawZXlKUFYwNUZVaUk2SWt0cGJtYzVPRGd4SWl3aVVrVlFUeUk2SW5WeVltRnVMVzlqZEc4dGMzVmpZMjkwWVhOb0lpd2lWRWRmUVZCSlgwbEVJam9pTVRZMU5EWXlOekFpTENKVVIxOUJVRWxmU0VGVFNDSTZJakZs[...]
           
       - name: Get segments
         id: get-segments
@@ -79,9 +79,22 @@ jobs:
         with:
           pattern: segment-*
           path: /app/encoded
+      - name: Extract necessary files and clean up
+        run: |
+          cd /app/encoded
+
+          ls -sh
+          
+          for file in segment-*; do
+            tar -xzf $file
+          done
+          rm -rf segment-*
       - name: Merge and upload files
         run: |
           cd /app
+
+          ls -sh
+          
           python3 upload.py
 
   delete:
