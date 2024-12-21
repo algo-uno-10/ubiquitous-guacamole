@@ -82,13 +82,13 @@ jobs:
       - name: Extract necessary files and clean up
         run: |
           cd /app/encoded
-
           ls -sh
-          
-          for file in segment-*; do
-            tar -xzf $file
+          for dir in segment-*; do
+            if [ -d "$dir" ]; then
+              mv "$dir"/* .
+              rmdir "$dir"
+            fi
           done
-          rm -rf segment-*
       - name: Merge and upload files
         run: |
           cd /app
