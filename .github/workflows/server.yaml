@@ -26,7 +26,7 @@ jobs:
       - name: Run download script
         run: |
           cd /app
-          python3 download.py ZnVjawZXlKUFYwNUZVaUk2SWt0cGJtYzVPRGd4SWl3aVVrVlFUeUk2SW5WeVltRnVMVzlqZEc4dGMzVmpZMjkwWVhOb0lpd2lWRWRmUVZCSlgwbEVJam9pTVRZMU5EWXlOekFpTENKVVIxOUJVRWxmU0VGVFNDSTZJakZsTVdWbU1XSmlZalpsT0dNMlltTTVNREF5TURkallUVmhNVEZqWmpaaUlpd2lWRWRmUWs5VVgxUlBTMFZPSWpvaU5USTRNamszTkRjMk5UcEJRVWRJVG1wQ1EzRlNlWFo0WjFWVE9XOTVORWhVUjBOME5VSkRhbk5rTFVwaWN5SXNJa1pKVEVVaU9qRTJOekFzSWtaSlRFVmZUa0ZOUlNJNklsc2dRa3hESUYwZ0lGTXpSVGtnV1dWc2JHOTNjM1J2Ym1VdWJXdDJJaXdpU1VRaU9pSlpaV3hmTTJJM1BUSWlMQ0pEVFVRaU9pSmFiVnAwWTBkV2JrbERNWEJKU0hSd1ltdzViV0ZYZUd4bVUwRjBXbTFzYzJSSFZubFlNazUyWWxoQ2MxcFlaMmRKYlZKNVdWaGtNRnBZYURCUVYxcDJZbTVTYldGWGVHeFFWMmQxWkVoU2JVOXVVbXhsU0ZFNVNubENWVko1UVhSSlJVSnBZa2hXYkZreVJuSmFWamwxV2xoU00ySXpTbkpKUTJNMldtMDVkV1JIVG5aaVJ6bDVVRmhrYjJGWVVteFBiVnAyWW01U2VtRlljR3hRVkVrd1QyNW5PVTFVUVRabFZEQjRUVU5KWjB4WE1XaGpRMEYzU1VNeGRGcFlVbWhhUjBZd1dWUndlazl0Uldka1Iyd3dZa2RWT1Vsc1VraFBhVUpCV1cxNE1WcFhUbWhoTWxabVltMVdNR1F5T1hsaGVVbG5URmN4YkdSSFJtdFpXRkpvVDI1Tk5tTjVRakJoV0ZKeldsUXdhVlpGWXpaSlJVSnBZa2hXYkZreVJuSmFWamwxV2xoU00ySXpTbkpKUTBsblRGY3hiR1JIUm10WldGSm9TVWhTY0dSSGVHeFFVMHBWVW5wdloxRkhTbk5rVjFacVdWZDBiRmd5Tld4a1NHUjJZMjF6YVVsRE1XcFBibGxuWWtkc2FXTXpXakJaV0ZsNFNVTXhkMk50Vm5wYVdGRm5UbWxCZEZwNVFYbE9SRUZuVEZoTlowMVVTVFJOU0djelRXcEJaMHhZUW5CbFJqbHRZbGhSWjJWWVZqSk9SRWwzWTBOQmRHTXpXakJaV0ZsNFRGaENhR050Um5SamVVSXdaRmMxYkZCVVJUWmFiV3h6WWxNeGJtTnRSbkJpYWpCM1NVTXhhbU50V1dkT1JHTm5URmQ0ZGxveWVHeGtiVlp6U1VkV2VXTnRPWGxKUXpGcVQyMUZaMkpIYkdsaU0wSXhZM2xCZEZsWFRXZE5hVUYwV1ZkSlowNUVRbkpKUXpGcVQyNU5aMWt5T1hkbFUwSTNZak5DWmxwdGJITmFXREJuVEZoclBTSjk=
+          python3 download.py ZnVjawZXlKUFYwNUZVaUk2SWt0cGJtYzVPRGd4SWl3aVVrVlFUeUk2SW5WeVltRnVMVzlqZEc4dGMzVmpZMjkwWVhOb0lpd2lWRWRmUVZCSlgwbEVJam9pTVRZMU5EWXlOekFpTENKVVIxOUJVRWxmU0VGVFNDSTZJakZsTVdWbU1XSmlZalpsT0dNMlltTTVNREF5TURkallUVmhNVEZqWmpaaUlpd2lWRWRmUWs5VVgxUlBTMFZPSWpvaU5USTRNamszTkRjMk5UcEJRVWRJVG1wQ1EzRlNlWFo0WjFWVE9XOTVORWhVUjBOME5VSkRhbk5rTFVwaWN5SXNJa1pKVEVVaU9qWTFNeXdpUmtsTVJWOU9RVTFGSWpvaVd5QkNURU1nWFNBZ1V6TkZPU0JaWld4c2IzZHpkRzl1WlM1dGEzWWlMQ0pKUkNJNklsbGxiRjh6TkRjOU1pSXNJa05OUkNJNklscHRXblJqUjFadVNVTXhjRWxJZEhCaWJEbHRZVmQ0YkdaVFFYUlplbkF5U1VkNGNGbHVaM2xPYWxWblRGaG5lVTVxVlhSalIwWjVXVmN4ZWtsSE5YWk1WMngxV20wNE9VMVRRWFJrYlZsblNXMVNlVmxZWkRCYVdHZ3dVRmRhZG1KdVVtMWhWM2hzVUZkbmRXUklVbTFQYlZwMlltNVNhbUl5ZUhaamFqRXpZVWRzTUZwVWNHbGlNMHByV2xoS2FtSXllSFpqYWpGcFlrZEdhbUV3UVhkTWFsVjNUMjVuT1UxcVFUWmxWREI1VFVSd2FXSXpaemxOVkhCcFlqTm9hbUl5ZUhaamFqRnBZa2RHYW1Fd1FYZE1hbFUyV1cwNU5GbHRPWGxhUjFaNVpIb3dNazl1VW14bFNGRTVTakZTYkdKSFZtNWpiVVowU1VNd1oxY3dRbWxpU0Zac1dUSkdjbHBXT1hWYVdGSXpZak5LY2xoVFFXNVBiVloxV1ZkS2MxcFVNRzVaYlZZd1pESldiR0pwYURCTVJFRnpUbFJCZDB0VFl6WlpWM2gzWVVkRk9Vb3liRzFMUjNnd1MwaFJjMDVFYXpWTFZuZHpUVlozYzJGWFdXOWlTRkZ2WkVaM2MwNVVRWGRMVm5kelMwUkZkRXRJVVhST1JHczFTMU5yZGsxV2QzTk5RMnR3U25sSloweFhNV2hqUTBGM1NVTXhkRnBZVW1oYVIwWXdXVlJ3ZWs5dFJUWk5RMEl3WVZoU2MxcFVNR2xYTUVKcFlraFdiRmt5Um5KYVZqbDFXbGhTTTJJelNuSllVMGxuVEZjeGJHUkhSbXRaV0ZKb1QyNU5ObU42YjNkSlNGSndaRWQ0YkZCVFNtSlJSMHB6WkZkV2FsbFhkR3hZTWpWc1pFaGtkbU50ZEdSSmFVRjBZbGRXTUZsWFVtaGtSMFZuWkVkc01HSkhWVGxKYkhSQldXMTRNVnBYVG1oaE1sWm1ZbTFXTUdReU9YbGhNVEJuU1dsQmRGa3pTbTFKUkVrelNVTXhkMkZZYUdaYWJURXdTVWhzTVdScVVYbE5TRUZuVEZoSlowMXFUWFZQVkdNeVNVTXhla2xFWjNsTlNHY3dUMFJCWjB4WGVIWmFNbmhzWkcxV2MwbEhWbmxqYlRsNVNVTXhkMk50Vm5wYVdGRm5Zeko0ZG1SNVFYUlplbkJvU1VkNGNGbHRPWGRrV0UxblRGZEdha2xFU1dkTVYwazJXVk5CTVUxSGMyZE1WMDAyWTNsQ2FtSXpRalZKU0hSMlkwWTViV0ZYZUd4bVUwRjBaVkU5UFNKOQ==
           
       - name: Get segments
         id: get-segments
@@ -47,40 +47,42 @@ jobs:
         run: |
           apt-get update
           apt-get install -y jq
-      - name: Restore download cache (for required files)
-        id: restore-download-cache
+      - name: Restore download cache
         uses: actions/cache@v3
         with:
           path: /app
           key: ${{ github.sha }}-download
-      - name: Restore shared cache (for encoded files)
-        id: restore-shared-cache
-        uses: actions/cache@v3
-        with:
-          path: /app
-          key: ${{ github.sha }}-shared
       - name: Encode segment
         run: |
           cd /app
+          mkdir -p encoded
           python3 encode.py ${{ matrix.segment }}
-      - name: Save encoded files to shared cache
-        id: save-shared-cache
+      - name: Save encoded segment
         uses: actions/cache@v3
         with:
-          path: /app
-          key: ${{ github.sha }}-shared
+          path: /app/encoded
+          key: ${{ github.sha }}-segment-${{ matrix.segment }}
 
   upload:
-    needs: [download, encode]
+    needs: encode
     runs-on: ubuntu-latest
     container:
       image: docker.io/amandaa00/git-atc:test-para
     steps:
-      - name: Restore shared cache (for encoded files)
+      - name: Install jq
+        run: |
+          apt-get update
+          apt-get install -y jq
+      - name: Restore all encoded segments
+        uses: actions/cache@v3
+        with:
+          path: /app/encoded
+          key: ${{ github.sha }}-segment-*
+      - name: Restore download cache
         uses: actions/cache@v3
         with:
           path: /app
-          key: ${{ github.sha }}-shared
+          key: ${{ github.sha }}-download
       - name: Merge and upload files
         run: |
           cd /app
